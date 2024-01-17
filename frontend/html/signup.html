@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/signup.css">
+    <title>Signup</title>
+</head>
+<body>
+    <!-- Signup Page -->
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <!-- Include relevant input fields for signup -->
+            <!-- Example: -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button id="signupbtn" type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <!-- Login Page -->
+   
+</body>
+</html>
+<script>
+    let signupForm = document.getElementById("signupbtn")
+
+    signupForm.addEventListener("click",(e)=>{
+        e.preventDefault()
+        let name = document.getElementById("username").value
+        let email = document.getElementById("email").value
+        let password = document.getElementById("password").value
+
+        let obj={
+         name:name,
+  
+         email:email,
+         password:password,
+      
+         
+     }
+
+     fetch("http://localhost:3111/user/signup",{
+        method:'POST',
+     headers:{
+         "Content-type":"application/json"
+     },
+     body:JSON.stringify(obj)
+ })
+ .then((res)=>{
+ 
+     return res.json();
+ })
+ .then((data)=>{
+     console.log(data);
+     alert("Registration done!")
+     window.location.href = "./login.html";
+ 
+ })
+ .catch((err)=>{
+    
+ console.log(err);
+ })
+
+    })
+</script>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/Login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <!-- Include relevant input fields for login -->
+            <!-- Example: -->
+            <label for="loginUsername">UserEmail:</label>
+            <input type="text" id="loginEmail" name="loginEmail" required>
+
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="loginPassword" required>
+
+            <button id="loginbtn"type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+       let loginForm = document.getElementById("loginbtn")
+
+       loginForm.addEventListener("click",(e)=>{
+    e.preventDefault()
+  
+    let email = document.getElementById("loginEmail").value
+    let password = document.getElementById("loginPassword").value
+
+    let obj={
+   
+
+     email:email,
+     password:password,
+  
+     
+ }
+
+ fetch("http://localhost:3111/user/login",{
+    method:'POST',
+ headers:{
+     "Content-type":"application/json"
+ },
+ body:JSON.stringify(obj)
+})
+.then((res)=>{
+
+ return res.json();
+})
+.then((data)=>{
+
+	console.log(data);
+			if (data.token != undefined) {
+				// localStorage.clear();
+				localStorage.setItem("token", data.token);
+				alert(data.msg);
+				window.location.href = "./index.html";
+			} else {
+				alert(data.msg);
+			}
+    // if (data) {
+    //         console.log(data);
+    //         alert("Login done!");
+    //         window.location.href = "./index.html";
+    //     } else {
+    //         alert("Invalid login credentials");
+    //     }
+
+})
+.catch((err)=>{
+
+console.log(err);
+})
+
+})
+</script>

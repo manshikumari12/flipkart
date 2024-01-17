@@ -1,0 +1,353 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+nav{
+    /* border: 1px solid red; */
+    padding: 20px;
+   background-color: rgb(234, 235, 236);
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   overflow: hidden;
+   position: sticky;
+   top: 0;
+   z-index: 100;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+}
+#logo{
+    color: blue;
+}
+ span{
+       /* border: 1px solid red; */
+    margin-left: -17px;
+    font-size: 40px;
+    margin-top: -9px;
+    color: rgb(247, 205, 16);
+    font-weight: bolder;
+}
+#yousearch {
+    position: relative; /* Add position: relative to make positioning children easier */
+    width: 600px;
+    border: 1px solid; /* Add a border for the initial state */
+    border-radius: 5px;
+    padding: 7px;
+}
+
+.fas {
+    position: absolute;
+   /* Adjust the value based on your design */
+   left: 750px;
+   top:34px;
+    transform: translateY(-50%); /* Center the icon vertically */
+    /* border: 1px solid red; */
+}
+
+#yousearch:focus {
+    border-color: blue;
+    
+    outline: none;
+    /* border-radius: 5px; */
+}
+
+
+#Signup{
+    border: none;
+    background-color:blue ;
+    color: whitesmoke;
+    padding: 8px;
+    border-radius: 5px;
+}
+#login{
+    border: none;
+    background-color:blue ;
+    color: whitesmoke;
+    padding: 8px;
+    border-radius: 5px;
+}
+#cart{
+    border: none;
+    background-color:blue ;
+    color: whitesmoke;
+    padding: 8px;
+   
+    border-radius: 5px;
+}
+/* =================================================== */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #yousearch {
+        width: 100%;
+    }
+
+    .fas {
+        left: auto;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 380px) {
+    nav {
+        padding: 10px;
+    }
+
+    #yousearch {
+        width: 100%;
+    }
+
+    #Signup,
+    #login,
+    #cart {
+        padding: 5px;
+        font-size: 14px;
+    }
+}
+
+/* ============================================ */
+
+#Seller{
+    border: none;
+    background-color:blue ;
+    color: whitesmoke;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.slide {
+    position: relative;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    transition: color 0.8s; 
+}
+
+
+
+
+
+.prev-btn {
+   
+
+    left: 10px;
+    top: 140px;
+    color: rgb(187, 185, 185);
+    background-color: rgb(243, 244, 245);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.next-btn {
+   
+    right: 10px;
+    top: 140px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: rgb(243, 244, 245);
+    color: rgb(187, 185, 185);
+    padding: 5px;
+    border-radius: 4px;
+}
+
+
+@media (max-width: 600px) {
+    .prev-btn, .next-btn {
+        font-size: 18px; 
+    }
+}
+.pagecontainer{
+  
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: whitesmoke;
+   
+}
+.container{
+  
+    display: flex;
+    justify-content: space-around;
+}
+
+.tagmark{
+    
+    font-size: 10px;
+    text-align: center;
+    font-weight:bold ;
+}
+
+
+
+.bestsell {
+   
+    padding: 30px;
+}
+
+
+.sell {
+   
+    display: flex;
+
+}
+
+
+.bestone {
+    border: 1px solid rgb(186, 186, 188);
+    border-radius: 2px;
+margin-left: 20px;
+    padding: 20px; 
+    text-align: center; 
+}
+.bestone:hover{
+    border: 1px solid rgb(186, 186, 188);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 2px;
+margin-left: 20px;
+    padding: 20px; 
+    text-align: center; 
+}
+
+
+.bestone > h3 {
+    font-size: 15px;
+}
+
+
+.bestone > p {
+    font-size: 9px;
+}
+
+
+.bestone img {
+  
+    width: 50%;
+    margin: auto; 
+   
+}
+
+
+
+#img2{
+    width: 80px;
+   
+}
+#img3{
+    width: 130px;
+   
+}
+#img4 {
+    width: 90px;
+   
+   
+}
+
+
+.cont{
+  
+    display: flex;
+    padding: 20px;
+    margin-left: -30px;
+   
+}
+.image>img{
+  
+    width: 358px;
+    margin-left: 20px;
+
+}
+
+
+  
+  footer {
+    background-color: #353434;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    color: whitesmoke;
+  }
+  
+  .footer-section {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .footer-section h2 {
+    color: whitesmoke;
+    font-size:15px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section p {
+    font-size: 10px;
+    color: whitesmoke;
+  }
+  
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-section a {
+    text-decoration: none;
+    font-size: 10px;
+    color: whitesmoke;
+    text-align: center;
+  }
+  
+  .footer-section form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-section input,
+  .footer-section button {
+    margin-top: 10px;
+  }
+  .footer-section input:focus{
+    outline: none;
+    border-color: blue;
+    border-radius: 5px;
+  }
+  .footer-section button:hover{
+    background-color: blue;
+    color: whitesmoke;
+    border: none;
+    border-radius: 2px;
+  }
