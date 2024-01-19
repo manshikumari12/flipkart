@@ -5,22 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/Login.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/nav.css">
 </head>
 <body>
+
+    <nav>
+        <div class="navbar">
+       
+
+            <h1 id="logo">SwipeKart</h1><span>+</span>
+           
+
+          <div class="search">
+            <input type="text" id="yousearch" placeholder="Search for ProductS, Brands and More" >
+         <i class="fas fa-search"></i>
+
+          </div>
+         
+            <button id="Signup">Signup</button>
+            <button id="login">Login</button>
+            <button id="cart">Bag</button>
+            <button id="Seller">Become a Seller</button>
+
+
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
     <div class="login-container">
-        <h2>Login</h2>
+        <h2>Feel the Fashion 
+            The only fashion site you need.</h2>
+            <hr>
+            <br>
+            <br>
         <form id="loginForm">
             <!-- Include relevant input fields for login -->
             <!-- Example: -->
             <label for="loginUsername">UserEmail:</label>
-            <input type="text" id="loginEmail" name="loginEmail" required>
+            <input type="text" id="loginEmail" text="loginEmail" required>
 
             <label for="loginPassword">Password:</label>
-            <input type="password" id="loginPassword" name="loginPassword" required>
+            <input type="password" id="loginPassword" text="loginPassword" required>
 
             <button id="loginbtn"type="submit">Login</button>
+            <h5>Or</h5>
+            <button>Register</button>
         </form>
+    
     </div>
+
+
+
+
+    <footer>
+        <div class="footer-section about">
+          <h2>About Us</h2>
+          <p>
+            Discover a seamless online shopping haven with our user-friendly e-commerce platform, offering curated products and a streamlined experience from browsing to checkout</p>
+        </div>
+    
+        <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p>Email: SwipeKart+@gmail.com<br>Phone: +1 123 456 7890</p>
+        </div>
+    
+        <div class="footer-section links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-section newsletter">
+          <h2>Subscribe to Our SwipeKart</h2>
+          <form action="#" method="post">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </footer>
 </body>
 </html>
 <script>
@@ -55,8 +130,13 @@
 .then((data)=>{
 
 	console.log(data);
+
+   localStorage.setItem("userID", data.userID);
 			if (data.token != undefined) {
 				// localStorage.clear();
+      
+        console.log(data.userID)
+      localStorage.setItem("userID", data.userID);
 				localStorage.setItem("token", data.token);
 				alert(data.msg);
 				window.location.href = "./index.html";

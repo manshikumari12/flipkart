@@ -24,40 +24,36 @@ const usersignup = async (req,res) => {
         res.status(400).send({ msg: "Error Ocurred" });
     }   
 }
-const userlogin = async(req,res) => {
+const userlogin = async (req, res) => {
     try {
-        const {email,password}=req.body
-        console.log(email,password)
-         const user = await UserModel.findOne({email})
-         if(!user){
+        const { email, password } = req.body;
+        console.log(email, password);
+
+        const user = await UserModel.findOne({ email });
+
+        if (!user) {
             return res.status(400).send({ msg: "User Does not Exist, Kindly Register First!!" });
-         }
-     
+        }
 
-         const passwordmatching =await bcrypt.compare(password,user.password)
+        const passwordMatching = await bcrypt.compare(password, user.password);
 
-         if(!passwordmatching){
-            res.status(401).send({msg:"InValid Credentials"})
-         }
+        if (!passwordMatching) {
+            return res.status(401).send({ msg: "Invalid Credentials" });
+        }
 
-         const token = jwt.sign({ userId: user._id },"usercode", {
-			expiresIn: "2h",
-		});
-
-		res.status(200).json({
-			msg: "Login Successful",
-			token,
-		});
-
+        const token = jwt.sign({ userID: user._id }, "secretKey", { expiresIn: "2h" });
+        console.log({ userID: user._id });
+        res.status(200).json({ msg: "Login Successful", token,userID: user._id});
 
     } catch (error) {
-       res.status(400).send({msg:"Error Occured"}) 
+        console.error(error);
+        res.status(500).send({ msg: "Internal Server Error" });
     }
-}
-const userlogout = async(req,res) => {
-    
-}
+};
 
+const userlogout = async (req, res) => {
+    // Implement logout functionality if needed
+};
 module.exports = {
      usersignup,
      userlogin,

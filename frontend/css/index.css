@@ -3,8 +3,8 @@
     padding: 0;
     font-family: Arial, sans-serif;
 }
-nav{
-    /* border: 1px solid red; */
+/* nav{
+  
     padding: 20px;
    background-color: rgb(234, 235, 236);
    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -21,7 +21,7 @@ nav{
     color: blue;
 }
  span{
-       /* border: 1px solid red; */
+
     margin-left: -17px;
     font-size: 40px;
     margin-top: -9px;
@@ -29,27 +29,27 @@ nav{
     font-weight: bolder;
 }
 #yousearch {
-    position: relative; /* Add position: relative to make positioning children easier */
+    position: relative; 
     width: 600px;
-    border: 1px solid; /* Add a border for the initial state */
+    border: 1px solid; 
     border-radius: 5px;
     padding: 7px;
 }
 
 .fas {
     position: absolute;
-   /* Adjust the value based on your design */
+
    left: 750px;
    top:34px;
-    transform: translateY(-50%); /* Center the icon vertically */
-    /* border: 1px solid red; */
+    transform: translateY(-50%);
+
 }
 
 #yousearch:focus {
     border-color: blue;
     
     outline: none;
-    /* border-radius: 5px; */
+   
 }
 
 
@@ -75,7 +75,7 @@ nav{
    
     border-radius: 5px;
 }
-/* =================================================== */
+
 @media only screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -94,7 +94,7 @@ nav{
     }
 }
 
-/* Media query for mobile devices */
+
 @media only screen and (max-width: 380px) {
     nav {
         padding: 10px;
@@ -110,7 +110,7 @@ nav{
         padding: 5px;
         font-size: 14px;
     }
-}
+} */
 
 /* ============================================ */
 
@@ -292,7 +292,7 @@ margin-left: 20px;
 }
 
 
-  
+/*   
   footer {
     background-color: #353434;
     padding: 20px;
@@ -350,4 +350,4 @@ margin-left: 20px;
     color: whitesmoke;
     border: none;
     border-radius: 2px;
-  }
+  } */

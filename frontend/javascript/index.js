@@ -47,3 +47,58 @@ loginButton.addEventListener("click", () => {
 });
 
 
+const cartButton = document.getElementById("cart");
+
+cartButton.addEventListener("click", () => {
+    if (checkLoggedIn()) {
+        // User is logged in, redirect to the cart
+        redirectToCart();
+    } else {
+        // User is not logged in, show a message or redirect to the login page
+        alert("Please log in first.");
+        // Alternatively, you can redirect to the login page:
+        // window.location.href = "/login"; // Replace "/login" with your actual login page URL
+    }
+});
+
+function checkLoggedIn() {
+    // Assuming you have a way to check if the user is logged in.
+    // You can use your authentication logic here.
+    const userID = localStorage.getItem("userID");
+    return userID !== null; // Assuming userID is set upon login
+}
+
+
+
+
+// let cart=document.getElementById("cart")
+// cart.addEventListener("click", () => {
+   
+//     window.location.href = "./cart.html";
+// });
+let boxcontainers = document.getElementsByClassName("boxcontainer");
+for (let i = 0; i < boxcontainers.length; i++) {
+    boxcontainers[i].addEventListener("click", () => {
+        window.location.href = "./product.html";
+    });
+}
+
+
+let bestones = document.getElementsByClassName("bestone");
+for (let i = 0; i < bestones.length; i++) {
+    bestones[i].addEventListener("click", () => {
+        window.location.href = "./product.html";
+    });
+}
+
+
+let images = document.getElementsByClassName("image");
+for (let i = 0; i < images.length; i++) {
+    images[i].addEventListener("click", () => {
+        window.location.href = "./product.html";
+    });
+}
+
+
+
+
