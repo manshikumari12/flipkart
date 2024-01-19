@@ -212,7 +212,7 @@
    
       const userID = localStorage.getItem("userID");
     const fetchCart = () => {
-        fetch("http://localhost:3111/cart/allcart", {
+        fetch("https://blue-embarrassed-eagle.cyclic.app/cart/allcart", {
             headers: {
                 "Authorization": `${userID}`
             }
